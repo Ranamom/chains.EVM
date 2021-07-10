@@ -30,7 +30,7 @@ const tryWalletConnect = async () => {
       window.location.reload();
     });
   } else {
-    console.warn("No browser wallet detected. Give metamask a try.")
+    console.warn("No browser wallet detected. Give metamask a try.");
   }
 };
 
