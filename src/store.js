@@ -9,7 +9,6 @@ const state = reactive({
 const tryWalletConnect = async () => {
   if (window.ethereum) {
     try {
-      await window.ethereum.enable();
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
@@ -40,6 +39,7 @@ const getChain = computed(() => state.chainId);
 
 const store = {
   tryWalletConnect,
+  state,
   getAccount,
   getChain,
 };
