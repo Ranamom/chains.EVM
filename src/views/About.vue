@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <!-- <navbar></navbar> -->
+  <div class="about"></div>
 </template>
+
+<script>
+// import navbar from "@/components/navbar.vue";
+
+export default {
+  components: {
+    // navbar,
+  },
+};
+</script>
