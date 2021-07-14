@@ -1,6 +1,6 @@
 module.exports = {
   purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     colors: {
       primary: {
@@ -40,12 +40,26 @@ module.exports = {
         dp16: "#343434",
         dp24: "#383838",
       },
+      default: {
+        black: "#000",
+        white: "#fff",
+      },
     },
     extend: {
       fontFamily: {
         title: ["raleway", "montserrat", "sans-serif"],
         body: ["open sans", "Helvetica Neue", "helvetica"],
       },
+      opacity: {
+        38: "0.38",
+        87: "0.87",
+      },
+      strokeWidth: {
+        3: "3",
+        4: "4",
+        "5/2": "2.5",
+        "7/2": "3.5",
+      }
     },
   },
   variants: {
