@@ -54,6 +54,10 @@ module.exports = {
         38: "0.38",
         87: "0.87",
       },
+      textOpacity: {
+        38: "0.38",
+        87: "0.87",
+      },
       strokeWidth: {
         3: "3",
         4: "4",
@@ -63,7 +67,13 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ["disabled"],
+      backgroundColor: ["disabled"],
+      textColor: ["disabled"],
+      textOpacity: ["disabled"],
+      borderOpacity: ["disabled"],
+    },
   },
   plugins: [],
 };
