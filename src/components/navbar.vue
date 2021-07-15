@@ -23,6 +23,9 @@
     </svg>
     <nav class="flex flex-row space-x-12 w-auto p-2 items-center">
       <div>
+        <darkModeToggle class="mt-2.5"></darkModeToggle>
+      </div>
+      <div>
         <walletButton></walletButton>
       </div>
     </nav>
@@ -31,12 +34,14 @@
 
 <script>
 import walletButton from "@/components/walletButton.vue";
+import darkModeToggle from "@/components/darkModeToggle.vue";
 // import store from "../store.js";
 
 export default {
   name: "navbar",
   components: {
     walletButton,
+    darkModeToggle,
   },
   // methods: {
   //   async connect() {
