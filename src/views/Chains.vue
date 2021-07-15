@@ -1,14 +1,11 @@
 <template>
-  <!-- <navbar></navbar> -->
-  <div class="about"></div>
+  <div class="chains"></div>
 </template>
 
 <script>
 // import navbar from "@/components/navbar.vue";
 
 export default {
-  components: {
-    // navbar,
-  },
+  name: "Chains",
 };
 </script>
