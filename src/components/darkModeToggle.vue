@@ -4,26 +4,66 @@
 </template>
 
 <script>
+import store from "../store.js";
+
 export default {
   name: "darkModeToggle",
   methods: {
     darkClassToggle() {
       const toggle = document.querySelector(".toggle");
       const html = document.firstElementChild;
+      // if (toggle.checked) {
+      //   html.classList.remove("dark");
+      //   localStorage.theme = "light";
+      //   toggle.checked = true;
+      // } else {
+      //   html.classList.add("dark");
+      //   localStorage.theme = "dark";
+      // }
+      // console.log(store.state.theme);
+
+      store.state.theme = null;
+      // HACK: to inverse icon where moon shows on dark background, exchange '!' on toggle.checked in if-else-if and invert localstorage.theme (dark -> white and vice verse)
       if (toggle.checked) {
-        html.classList.remove("dark");
-      } else {
         html.classList.add("dark");
+        localStorage.theme = "light";
+      } else if (!toggle.checked) {
+        html.classList.remove("dark");
+        localStorage.theme = "dark";
       }
     },
+    initTheme() {
+      const cacheTheme = localStorage.theme ? localStorage.theme : false;
+      console.log(cacheTheme);
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      console.log(prefersDark);
+      if (cacheTheme) {
+        store.state.theme = cacheTheme;
+      } else if (prefersDark) {
+        store.state.theme = "dark";
+      } else {
+        store.state.theme = "light";
+      }
+    },
+  },
+  mounted() {
+    const toggle = document.querySelector(".toggle");
+    if (store.state.theme === "dark") {
+      toggle.checked = false;
+    } else if (store.state.theme === "light") {
+      toggle.checked = true;
+    }
+    this.darkClassToggle();
+  },
+  beforeMount() {
+    this.initTheme();
   },
 };
 </script>
 
 <style>
-.material-icons-outlined {
-  fill: white;
-}
 .toggle {
   --size: 2rem;
   -webkit-appearance: none;
@@ -35,7 +75,7 @@ export default {
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: #e6e6ff;
+  color: #000;
   transition: all 500ms;
 }
 .toggle:checked {
@@ -43,7 +83,7 @@ export default {
   --offset-orthogonal: calc(var(--size) * 0.65);
   --offset-diagonal: calc(var(--size) * 0.45);
   transform: scale(0.75);
-  color: #000;
+  color: #fff;
   box-shadow: inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
     var(--offset-orthogonal) 0 0 var(--ray-size),
