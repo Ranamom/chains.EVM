@@ -1,13 +1,17 @@
 <template>
-  <vue-scroll-snap :fullscreen="true" :horizontal="true">
+  <vue-scroll-snap
+    class="bg-background-gray dark:bg-background-dark"
+    :fullscreen="true"
+    :horizontal="true"
+  >
     <div class="item"><Home></Home></div>
-    <div class="item"><About></About></div>
+    <div class="item"><Chains></Chains></div>
   </vue-scroll-snap>
 </template>
 
 <script>
 import Home from "@/views/Home.vue";
-import About from "@/views/About.vue";
+import Chains from "@/views/Chains.vue";
 import VueScrollSnap from "vue-scroll-snap";
 
 export default {
@@ -15,7 +19,14 @@ export default {
   components: {
     VueScrollSnap,
     Home,
-    About,
+    Chains,
   },
 };
 </script>
+
+<style>
+.scroll-snap-container.horizontal {
+  /* overflow-y: scroll; */
+  /* overflow-y: visible; */
+}
+</style>
