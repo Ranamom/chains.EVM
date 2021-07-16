@@ -13,7 +13,7 @@
         dm-toggle-transition
       "
     >
-      Lorem <span class="text-secondary-600">Ipsum</span>
+      Chains<span class="text-secondary-600">.EVM</span>
     </div>
     <div
       class="
