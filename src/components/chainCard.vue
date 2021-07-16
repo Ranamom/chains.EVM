@@ -45,6 +45,11 @@
           text-center
           px-4
           py-1
+          hover:text-default-white
+          hover:bg-primary-700
+          dark:hover:border-primary-300
+          dark:hover:bg-primary-300
+          dark:hover:text-default-black
           dark:text-background-light
           dm-toggle-transition
         "

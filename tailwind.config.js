@@ -78,6 +78,7 @@ module.exports = {
       textOpacity: ["disabled"],
       borderOpacity: ["disabled"],
       borderWidth: ["dark"],
+      borderColor: ["hover", "dark"],
     },
   },
   plugins: [],
