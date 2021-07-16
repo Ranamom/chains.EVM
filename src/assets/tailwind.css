@@ -3,3 +3,9 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer components {
+    .dm-toggle-transition {
+        @apply transition-colors duration-700
+    }
+}

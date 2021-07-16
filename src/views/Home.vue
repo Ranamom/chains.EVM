@@ -10,6 +10,7 @@
         font-title font-bold
         text-black
         dark:text-default-white dark:text-opacity-87
+        dm-toggle-transition
       "
     >
       Lorem <span class="text-secondary-600">Ipsum</span>
@@ -21,6 +22,7 @@
         font-title font-light
         text-black
         dark:text-default-white dark:text-opacity-60
+        dm-toggle-transition
       "
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
@@ -33,6 +35,7 @@
         font-body font-normal
         text-black
         dark:text-default-white dark:text-opacity-87
+        dm-toggle-transition
       "
     >
       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
