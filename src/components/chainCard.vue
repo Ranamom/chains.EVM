@@ -47,8 +47,7 @@
           text-center
           px-4
           py-1
-          hover:text-default-white
-          hover:bg-primary-700
+          hover:text-default-white hover:bg-primary-700
           dark:hover:border-primary-300
           dark:hover:bg-primary-300
           dark:hover:text-default-black
@@ -81,48 +80,6 @@ export default {
         return;
       }
 
-      //   {
-      //     "name":"Ethereum Mainnet",
-      //     "chain":"ETH",
-      //     "network":"mainnet",
-      //     "icon":"ethereum",
-      //     "rpc":[
-      //         "https://mainnet.infura.io/v3/${INFURA_API_KEY}",
-      //         "wss://mainnet.infura.io/ws/v3/${INFURA_API_KEY}",
-      //         "https://api.mycryptoapi.com/eth",
-      //         "https://cloudflare-eth.com"
-      //     ],
-      //     "faucets":[
-
-      //     ],
-      //     "nativeCurrency":{
-      //         "name":"Ether",
-      //         "symbol":"ETH",
-      //         "decimals":18
-      //     },
-      //     "infoURL":"https://ethereum.org",
-      //     "shortName":"eth",
-      //     "chainId":1,
-      //     "networkId":1,
-      //     "slip44":60,
-      //     "ens":{
-      //         "registry":"0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e"
-      //     },
-      //     "explorers":[
-      //         {
-      //             "name":"etherscan",
-      //             "url":"https://etherscan.io",
-      //             "standard":"EIP3091"
-      //         }
-      //     ]
-      // },
-
-      // {
-      //             chainId: "0x7",
-      //             rpcUrls: ["https://rpc.dome.cloud"],
-      //             chainName: "ThaiChain",
-      //           },
-
       const toHex = (num) => {
         return "0x" + num.toString(16);
       };
@@ -130,12 +87,12 @@ export default {
       let params = {
         chainId: toHex(this.chain.chainId),
         chainName: this.chain.name,
-        // nativeCurrency: {
-        //   name: this.chain.nativeCurrency.name,
-        //   symbol: this.chain.nativeCurrency.symbol,
-        //   decimals: this.chain.nativeCurrency.decimals,
-        // },
-        rpcUrls: this.chain.rpc,
+        nativeCurrency: {
+          name: this.chain.nativeCurrency.name,
+          symbol: this.chain.nativeCurrency.symbol,
+          decimals: this.chain.nativeCurrency.decimals,
+        },
+        rpcUrls: [this.chain.rpc[0]],
         blockExplorerUrls: [
           // eslint-disable-next-line prettier/prettier
           this.chain.explorers &&
@@ -147,11 +104,6 @@ export default {
       };
 
       console.log([this.chain.rpc[0]]);
-
-      // const res = await window.ethereum.request({
-      //   method: "wallet_addEthereumChain",
-      //   params: [params],
-      // });
 
       try {
         await window.ethereum.request({
@@ -165,26 +117,7 @@ export default {
           try {
             await window.ethereum.request({
               method: "wallet_addEthereumChain",
-              params: [
-                {
-                  chainId: toHex(this.chain.chainId),
-                  chainName: this.chain.name,
-                  nativeCurrency: {
-                    name: this.chain.nativeCurrency.name,
-                    symbol: this.chain.nativeCurrency.symbol,
-                    decimals: this.chain.nativeCurrency.decimals,
-                  },
-                  rpcUrls: [this.chain.rpc[0]],
-                  // blockExplorerUrls: [
-                  //   // eslint-disable-next-line prettier/prettier
-                  //   (this.chain.explorers &&
-                  //   this.chain.explorers.length > 0 &&
-                  //   this.chain.explorers[0].url)
-                  //     ? this.chain.explorers[0]
-                  //     : this.chain.infoURL,
-                  // ],
-                },
-              ],
+              params: [params],
             });
           } catch (addError) {
             console.log(addError);
