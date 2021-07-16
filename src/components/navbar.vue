@@ -10,6 +10,7 @@
       z-50
       bg-background-gray
       dark:bg-background-dark
+      dm-toggle-transition
     "
   >
     <!-- <img src="../assets/logo.png" class="h-12" /> -->

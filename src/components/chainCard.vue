@@ -3,10 +3,11 @@
     class="
       flex flex-col
       gap-y-2
-      w-72
+      w-76
       h-44
       bg-background-light
       dark:bg-background-dp04
+      dm-toggle-transition
       rounded-lg
       shadow-lg
       p-6
@@ -14,21 +15,22 @@
   >
     <div
       class="
-        text-2xl
+        text-xl
         font-title font-semibold
         text-center
         dark:text-background-light
+        dm-toggle-transition
         whitespace-nowrap
       "
     >
       Ethereum mainnet
     </div>
     <div class="flex flex-row justify-between">
-      <div class="dark:text-background-light">
+      <div class="dark:text-background-light dm-toggle-transition">
         <div class="font-body font-light">chainID</div>
         <div class="text-right pr-1 font-semibold">1</div>
       </div>
-      <div class="dark:text-background-light">
+      <div class="dark:text-background-light dm-toggle-transition">
         <div class="font-body font-light">Currency</div>
         <div class="text-right pr-1 font-semibold">ETH</div>
       </div>
@@ -44,6 +46,7 @@
           px-4
           py-1
           dark:text-background-light
+          dm-toggle-transition
         "
       >
         Add to wallet

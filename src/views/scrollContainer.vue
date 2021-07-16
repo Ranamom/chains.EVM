@@ -1,6 +1,6 @@
 <template>
   <vue-scroll-snap
-    class="bg-background-gray dark:bg-background-dark"
+    class="bg-background-gray dark:bg-background-dark dm-toggle-transition"
     :fullscreen="true"
     :horizontal="true"
   >
