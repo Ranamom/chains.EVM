@@ -5,7 +5,7 @@
     :horizontal="true"
   >
     <div class="item"><Home></Home></div>
-    <div class="item"><Chains></Chains></div>
+    <div id="x1" class="item"><Chains></Chains></div>
   </vue-scroll-snap>
 </template>
 
@@ -25,8 +25,11 @@ export default {
 </script>
 
 <style>
-.scroll-snap-container.horizontal {
-  /* overflow-y: scroll; */
-  /* overflow-y: visible; */
+/* .scroll-snap-container.horizontal {
+  overflow-y: scroll;
+  overflow-y: visible;
+} */
+#x1 {
+  overflow-y: scroll;
 }
 </style>
