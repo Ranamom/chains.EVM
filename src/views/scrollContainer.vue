@@ -1,5 +1,9 @@
 <template>
-  <vue-scroll-snap :fullscreen="true" :horizontal="true">
+  <vue-scroll-snap
+    class="bg-background-gray dark:bg-background-dark"
+    :fullscreen="true"
+    :horizontal="true"
+  >
     <div class="item"><Home></Home></div>
     <div class="item"><Chains></Chains></div>
   </vue-scroll-snap>
