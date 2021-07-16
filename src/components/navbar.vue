@@ -1,6 +1,16 @@
 <template>
   <header
-    class="flex flex-row justify-between items-center relative py-px px-6 z-50"
+    class="
+      flex flex-row
+      justify-between
+      items-center
+      relative
+      py-px
+      px-6
+      z-50
+      bg-background-gray
+      dark:bg-background-dark
+    "
   >
     <!-- <img src="../assets/logo.png" class="h-12" /> -->
     <svg

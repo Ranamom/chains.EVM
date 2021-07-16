@@ -1,16 +1,16 @@
 <template>
   <div class="chains">
-    <chainCard></chainCard>
+    <chainCardContainer></chainCardContainer>
   </div>
 </template>
 
 <script>
-import chainCard from "@/components/chainCard.vue";
+import chainCardContainer from "@/components/chainCardContainer";
 
 export default {
   name: "Chains",
   components: {
-    chainCard,
+    chainCardContainer,
   },
 };
 </script>
