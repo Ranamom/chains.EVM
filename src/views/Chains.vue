@@ -1,6 +1,6 @@
 <template>
   <div class="chains">
-    <chainCardContainer></chainCardContainer>
+    <chainCardContainer :chainData="chainData"></chainCardContainer>
   </div>
 </template>
 
@@ -11,6 +11,24 @@ export default {
   name: "Chains",
   components: {
     chainCardContainer,
+  },
+  data() {
+    return {
+      chainData: [],
+    };
+  },
+  methods: {
+    async getData() {
+      await fetch("https://chainid.network/chains.json")
+        .then((response) => response.json())
+        .then((data) => (this.chainData = data))
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  mounted() {
+    this.getData();
   },
 };
 </script>

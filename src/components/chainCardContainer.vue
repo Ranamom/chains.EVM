@@ -11,41 +11,11 @@
       z-40
     "
   >
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
-    <chainCard></chainCard>
+    <chainCard
+      v-for="(chain, index) in chainData"
+      :key="index"
+      :chain="chain"
+    ></chainCard>
   </div>
 </template>
 
@@ -56,6 +26,12 @@ export default {
   name: "chainCardContainer",
   components: {
     chainCard,
+  },
+  props: {
+    chainData: {
+      type: Array,
+      required: true,
+    },
   },
 };
 </script>

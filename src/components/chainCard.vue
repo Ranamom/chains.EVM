@@ -23,16 +23,18 @@
         whitespace-nowrap
       "
     >
-      Ethereum mainnet
+      {{ chain.name }}
     </div>
     <div class="flex flex-row justify-between">
       <div class="dark:text-background-light dm-toggle-transition">
         <div class="font-body font-light">chainID</div>
-        <div class="text-right pr-1 font-semibold">1</div>
+        <div class="text-right pr-1 font-semibold">{{ chain.chainId }}</div>
       </div>
       <div class="dark:text-background-light dm-toggle-transition">
         <div class="font-body font-light">Currency</div>
-        <div class="text-right pr-1 font-semibold">ETH</div>
+        <div class="text-right pr-1 font-semibold">
+          {{ chain.nativeCurrency.symbol }}
+        </div>
       </div>
     </div>
     <div class="flex justify-center">
@@ -60,3 +62,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    chain: {
+      type: Object,
+      required: true,
+    },
+  },
+};
+</script>
