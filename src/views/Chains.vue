@@ -1,11 +1,16 @@
 <template>
-  <div class="chains"></div>
+  <div class="chains">
+    <chainCard></chainCard>
+  </div>
 </template>
 
 <script>
-// import navbar from "@/components/navbar.vue";
+import chainCard from "@/components/chainCard.vue";
 
 export default {
   name: "Chains",
+  components: {
+    chainCard,
+  },
 };
 </script>
