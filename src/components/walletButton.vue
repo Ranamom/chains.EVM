@@ -7,7 +7,9 @@
       border-gray-700 border-solid border
       rounded-full
       shadow-sm
-      dark:bg-primary-400 dark:disabled:bg-background-dp08
+      dark:bg-primary-400
+      dark:border-0
+      dark:disabled:bg-background-dp08
       disabled:opacity-38
     "
     @click="connect"
