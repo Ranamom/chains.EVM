@@ -83,7 +83,8 @@ export default {
   --offset-orthogonal: calc(var(--size) * 0.65);
   --offset-diagonal: calc(var(--size) * 0.45);
   transform: scale(0.75);
-  color: #fff;
+  color: #f3f3f3;
+  opacity: 87%;
   box-shadow: inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
     var(--offset-orthogonal) 0 0 var(--ray-size),
