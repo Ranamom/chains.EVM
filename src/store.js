@@ -4,6 +4,7 @@ const state = reactive({
   account: null,
   chainId: null,
   ethereum: null,
+  theme: null,
 });
 
 const tryWalletConnect = async () => {
