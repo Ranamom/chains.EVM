@@ -97,13 +97,17 @@
       </div>
     </div>
   </div>
+  <Footer></Footer>
 </template>
 
 <script>
 // import store from "../store.js";
+import Footer from "@/components/footer.vue";
 
 export default {
   name: "Home",
-  components: {},
+  components: {
+    Footer,
+  },
 };
 </script>
