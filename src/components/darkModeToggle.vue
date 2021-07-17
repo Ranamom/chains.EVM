@@ -75,6 +75,7 @@ export default {
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
   color: #000;
+  opacity: 87%;
   transition: all 500ms;
 }
 .toggle:checked {
