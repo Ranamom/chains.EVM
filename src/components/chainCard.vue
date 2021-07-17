@@ -20,7 +20,7 @@
         text-center
         dark:text-background-light
         dm-toggle-transition
-        whitespace-nowrap
+        truncate
       "
     >
       {{ chain.name }}
