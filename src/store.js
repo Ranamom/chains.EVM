@@ -27,7 +27,7 @@ const tryWalletConnect = async () => {
 
     window.ethereum.on("chainChanged", (chainId) => {
       state.chainId = chainId;
-      window.location.reload();
+      // window.location.reload();
     });
   } else {
     console.warn("No browser wallet detected. Give metamask a try.");
