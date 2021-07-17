@@ -1,7 +1,7 @@
 <template>
   <!-- <navbar></navbar> -->
   <div
-    class="flex flex-col text-center h-screen space-y-8 place-content-center"
+    class="flex flex-col text-center h-screen space-y-6 place-content-center"
   >
     <div
       class="
@@ -13,7 +13,10 @@
         dm-toggle-transition
       "
     >
-      Chains<span class="text-secondary-600">.EVM</span>
+      Chains<span
+        class="text-secondary-700 dark:text-secondary-300 dm-toggle-transition"
+        >.EVM</span
+      >
     </div>
     <div
       class="
@@ -25,11 +28,10 @@
         dm-toggle-transition
       "
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+      Browse and connect to EVM powered chain with click of a button!
     </div>
     <div
       class="
-        text-xl
         w-1/3
         place-self-center
         font-body font-normal
@@ -38,11 +40,61 @@
         dm-toggle-transition
       "
     >
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-      aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-      sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-      mollit anim id est laborum.
+      <div class="text-xl">
+        Chains<span
+          class="
+            text-secondary-700
+            dark:text-secondary-300
+            dm-toggle-transition
+          "
+          >.EVM</span
+        >
+        is a small project that strives to provide users with various EVM based
+        chains to connect to. All from the click of a button. Forget about the
+        days when you had to manually copy RPC Urls, block explorers and chainId
+        and use Chains<span
+          class="
+            text-secondary-700
+            dark:text-secondary-300
+            dm-toggle-transition
+          "
+          >.EVM</span
+        >
+        today!
+      </div>
+      <div class="text-sm mt-4">
+        Chains<span
+          class="
+            text-secondary-700
+            dark:text-secondary-300
+            dm-toggle-transition
+          "
+          >.EVM</span
+        >
+        uses and draws inspiration from
+        <a
+          href="https://eips.ethereum.org/EIPS/eip-3085"
+          target="_blank"
+          class="
+            underline
+            hover:no-underline hover:text-primary-700
+            dark:hover:text-primary-300
+          "
+          >EIP-3085</a
+        >
+        and
+        <a
+          href="https://ethereum-magicians.org/t/eip-3326-wallet-switchethereumchain/5471"
+          target="_blank"
+          class="
+            underline
+            hover:no-underline hover:text-primary-700
+            dark:hover:text-primary-300
+          "
+          >EIP-3326</a
+        >. This project is a work in progress and I'll continue to add various
+        features in the fututre.
+      </div>
     </div>
   </div>
 </template>
