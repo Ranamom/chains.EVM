@@ -34,11 +34,10 @@ export default {
     },
     initTheme() {
       const cacheTheme = localStorage.theme ? localStorage.theme : false;
-      console.log(cacheTheme);
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
       ).matches;
-      console.log(prefersDark);
+
       if (cacheTheme) {
         store.state.theme = cacheTheme;
       } else if (prefersDark) {
