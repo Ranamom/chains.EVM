@@ -1,6 +1,11 @@
 <template>
   <!-- <span class="material-icons">&#xE51C;&#xE518;</span> -->
-  <input @click="darkClassToggle" id="toggle" class="toggle" type="checkbox" />
+  <input
+    @click="darkClassToggle"
+    id="toggle"
+    class="toggle opacity-87"
+    type="checkbox"
+  />
 </template>
 
 <script>
@@ -75,7 +80,7 @@ export default {
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
   color: #000;
-  opacity: 87%;
+  /* opacity: 87%; */
   transition: all 500ms;
 }
 .toggle:checked {
@@ -84,7 +89,7 @@ export default {
   --offset-diagonal: calc(var(--size) * 0.45);
   transform: scale(0.75);
   color: #f3f3f3;
-  opacity: 87%;
+  /* opacity: 87%; */
   box-shadow: inset 0 0 0 var(--size),
     calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
     var(--offset-orthogonal) 0 0 var(--ray-size),
