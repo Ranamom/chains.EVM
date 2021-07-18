@@ -103,8 +103,6 @@ export default {
         ],
       };
 
-      console.log([this.chain.rpc[0]]);
-
       try {
         await window.ethereum.request({
           method: "wallet_switchEthereumChain",
