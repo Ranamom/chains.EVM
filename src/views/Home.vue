@@ -5,7 +5,8 @@
   >
     <div
       class="
-        text-6xl
+        text-5xl
+        md:text-6xl
         tracking-wide
         font-title font-bold
         text-black
@@ -20,7 +21,10 @@
     </div>
     <div
       class="
-        text-lg
+        text-xl
+        md:text-lg
+        px-4
+        md:px-0
         tracking-wider
         font-title font-light
         text-black
@@ -32,7 +36,9 @@
     </div>
     <div
       class="
-        w-1/3
+        w-3/4
+        md:w-1/2
+        lg:w-1/3
         place-self-center
         font-body font-normal
         text-black
@@ -40,7 +46,7 @@
         dm-toggle-transition
       "
     >
-      <div class="text-xl">
+      <div class="text-lg md:text-xl">
         Chains<span
           class="
             text-secondary-700
@@ -62,7 +68,7 @@
         >
         today!
       </div>
-      <div class="text-sm mt-4">
+      <div class="text-xs md:text-sm mt-4">
         Chains<span
           class="
             text-secondary-700
@@ -77,7 +83,8 @@
           target="_blank"
           class="
             underline
-            hover:no-underline hover:text-primary-700
+            hover:no-underline
+            hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3085</a
@@ -88,7 +95,8 @@
           target="_blank"
           class="
             underline
-            hover:no-underline hover:text-primary-700
+            hover:no-underline
+            hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3326</a
