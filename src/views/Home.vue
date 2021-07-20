@@ -1,19 +1,11 @@
 <template>
   <!-- <navbar></navbar> -->
   <div
-    class="
-      flex flex-col
-      text-center
-      h-screen
-      space-y-3
-      md:space-y-6
-      place-content-center
-    "
+    class="flex flex-col text-center h-screen space-y-6 place-content-center"
   >
     <div
       class="
-        text-5xl
-        md:text-6xl
+        text-6xl
         tracking-wide
         font-title font-bold
         text-black
@@ -28,10 +20,7 @@
     </div>
     <div
       class="
-        text-xl
-        md:text-lg
-        px-4
-        md:px-0
+        text-lg
         tracking-wider
         font-title font-light
         text-black
@@ -43,9 +32,7 @@
     </div>
     <div
       class="
-        w-3/4
-        md:w-1/2
-        lg:w-1/3
+        w-1/3
         place-self-center
         font-body font-normal
         text-black
@@ -53,7 +40,7 @@
         dm-toggle-transition
       "
     >
-      <div class="text-lg md:text-xl">
+      <div class="text-xl">
         Chains<span
           class="
             text-secondary-700
@@ -75,7 +62,7 @@
         >
         today!
       </div>
-      <div class="text-xs md:text-sm mt-4">
+      <div class="text-sm mt-4">
         Chains<span
           class="
             text-secondary-700
