@@ -1,7 +1,14 @@
 <template>
   <!-- <navbar></navbar> -->
   <div
-    class="flex flex-col text-center h-screen space-y-6 place-content-center"
+    class="
+      flex flex-col
+      text-center
+      h-screen
+      space-y-3
+      md:space-y-6
+      place-content-center
+    "
   >
     <div
       class="
@@ -83,8 +90,7 @@
           target="_blank"
           class="
             underline
-            hover:no-underline
-            hover:text-primary-700
+            hover:no-underline hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3085</a
@@ -95,8 +101,7 @@
           target="_blank"
           class="
             underline
-            hover:no-underline
-            hover:text-primary-700
+            hover:no-underline hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3326</a
