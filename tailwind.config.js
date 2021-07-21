@@ -69,6 +69,9 @@ module.exports = {
       width: {
         76: "19rem",
       },
+      screens: {
+        "1.5xl": "1440px",
+      },
     },
   },
   variants: {
