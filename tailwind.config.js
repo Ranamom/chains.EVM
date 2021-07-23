@@ -76,12 +76,12 @@ module.exports = {
   },
   variants: {
     extend: {
-      opacity: ["disabled"],
+      opacity: ["disabled", "dark"],
       backgroundColor: ["disabled"],
       textColor: ["disabled"],
       textOpacity: ["disabled"],
       borderOpacity: ["disabled"],
-      borderWidth: ["dark"],
+      borderWidth: ["dark", "hover"],
       borderColor: ["hover", "dark"],
       textDecoration: ["hover", "dark"],
     },
