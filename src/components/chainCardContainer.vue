@@ -10,15 +10,15 @@
         shadow-md
         hover:border hover:border-default-black
         dark:hover:border-0
-        w-1/2
+        w-2/5
         h-10
         rounded-full
       "
     >
-      <div class="font-body font-semibold pl-4">Search</div>
+      <div class="font-title font-semibold pl-4">Search</div>
       <input
         type="text"
-        placeholder="Ethereum, BNB..."
+        placeholder="Ethereum, BNB, 137..."
         class="flex-grow font-body focus:outline-none"
         v-model="query"
       />
@@ -39,12 +39,12 @@
       px-12
       xl:px-28
       mt-20
-      mb-18
+      mb-16
       z-40
     "
   >
     <chainCard
-      v-for="(chain, index) in chainData"
+      v-for="(chain, index) in filteredData"
       :key="index"
       :chain="chain"
     ></chainCard>
@@ -53,6 +53,7 @@
 
 <script>
 import chainCard from "@/components/chainCard.vue";
+import { computed, ref } from "@vue/runtime-core";
 
 export default {
   name: "chainCardContainer",
@@ -61,8 +62,8 @@ export default {
   },
   data() {
     return {
-      filteredChains: [],
-      query: "",
+      // filteredChains: [],
+      // query: "",
     };
   },
   props: {
@@ -70,6 +71,22 @@ export default {
       type: Array,
       required: true,
     },
+  },
+  setup(props) {
+    const query = ref("");
+
+    const filteredData = computed(() => {
+      return props.chainData.filter((chain) => {
+        return (
+          chain.name.toLowerCase().indexOf(query.value.toLowerCase()) != -1 ||
+          chain.nativeCurrency.symbol
+            .toLowerCase()
+            .indexOf(query.value.toLowerCase()) != -1 ||
+          String(chain.chainId).indexOf(query.value) != -1
+        );
+      });
+    });
+    return { filteredData, query };
   },
 };
 </script>
