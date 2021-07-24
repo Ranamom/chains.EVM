@@ -8,18 +8,24 @@
         gap-x-2
         bg-default-white
         shadow-md
-        hover:border hover:border-default-black
-        dark:hover:border-0
+        dark:bg-background-gray
+        dm-toggle-transition
         w-2/5
         h-10
         rounded-full
       "
     >
-      <div class="font-title font-semibold pl-4">Search</div>
+      <div class="font-title font-semibold pl-4">Search chain</div>
       <input
         type="text"
         placeholder="Ethereum, BNB, 137..."
-        class="flex-grow font-body focus:outline-none"
+        class="
+          flex-grow
+          font-body
+          focus:outline-none
+          dark:bg-background-gray
+          dm-toggle-transition
+        "
         v-model="query"
       />
       <div class="pr-4 h-6">
