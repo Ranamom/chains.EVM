@@ -21,6 +21,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 200"
       class="w-12 h-12 hidden md:block"
+      @click="scrollToChain"
     >
       <defs></defs>
       <path
@@ -67,11 +68,12 @@ export default {
     walletButton,
     darkModeToggle,
   },
-  // methods: {
-  //   async connect() {
-  //     await store.tryWalletConnect();
-  //   },
-  // },
+  methods: {
+    scrollToChain() {
+      const el = document.getElementById("x0");
+      el.scrollIntoView();
+    },
+  },
 };
 </script>
 

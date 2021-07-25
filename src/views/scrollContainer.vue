@@ -4,7 +4,7 @@
     :fullscreen="true"
     :horizontal="true"
   >
-    <div class="item"><Home></Home></div>
+    <div id="x0" class="item"><Home></Home></div>
     <div id="x1" class="item"><Chains></Chains></div>
   </vue-scroll-snap>
 </template>
