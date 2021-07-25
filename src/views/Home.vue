@@ -90,8 +90,7 @@
           target="_blank"
           class="
             underline
-            hover:no-underline
-            hover:text-primary-700
+            hover:no-underline hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3085</a
@@ -102,8 +101,7 @@
           target="_blank"
           class="
             underline
-            hover:no-underline
-            hover:text-primary-700
+            hover:no-underline hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3326</a
@@ -204,30 +202,8 @@ export default {
     },
 
     hoverOff() {
-      anime({
-        targets: ["line", "polyline"],
-        strokeDashoffset: [anime.setDashoffset, 0],
-        easing: "easeInOutSine",
-        duration: 0,
-        delay: anime.stagger(1000),
-        direction: "alternate",
-        loop: false,
-      });
+      anime.remove(["line", "polyline"]);
     },
-  },
-  mounted() {
-    // anime({
-    //   targets: ["line", "polyline"],
-    //   strokeDashoffset: [anime.setDashoffset, 0],
-    //   easing: "easeInOutSine",
-    //   duration: 1500,
-    //   // delay: function (el, i) {
-    //   //   return i * 3000;
-    //   // },
-    //   delay: anime.stagger(1000),
-    //   direction: "alternate",
-    //   loop: true,
-    // });
   },
 };
 </script>
