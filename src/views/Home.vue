@@ -90,7 +90,8 @@
           target="_blank"
           class="
             underline
-            hover:no-underline hover:text-primary-700
+            hover:no-underline
+            hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3085</a
@@ -101,7 +102,8 @@
           target="_blank"
           class="
             underline
-            hover:no-underline hover:text-primary-700
+            hover:no-underline
+            hover:text-primary-700
             dark:hover:text-primary-300
           "
           >EIP-3326</a
@@ -110,8 +112,14 @@
       </div>
     </div>
     <div>
-      <button id="scrollBtn" @click="scrollToChain" class="w-20 h-20">
-        <svg
+      <button
+        id="scrollBtn"
+        @click="scrollToChain"
+        @mouseover="hoverOn"
+        @mouseout="hoverOff"
+        class="w-16 h-16 rounded-full"
+      >
+        <!-- <svg
           version="1.1"
           id="Capa_1"
           xmlns="http://www.w3.org/2000/svg"
@@ -122,16 +130,43 @@
           style="enable-background: new 0 0 512.171 512.171"
           xml:space="preserve"
         >
-          <g>
-            <g>
-              <path
-                d="M509.035,248.212l-213.504-212.8c-3.051-3.029-7.595-3.904-11.627-2.304c-3.989,1.664-6.571,5.547-6.571,9.856v117.333
+          <path
+            class="
+              cls-1
+              stroke-current stroke-4
+              text-default-black
+              dark:text-default-white dark:text-opacity-87
+              dm-toggle-transition
+            "
+            d="M509.035,248.212l-213.504-212.8c-3.051-3.029-7.595-3.904-11.627-2.304c-3.989,1.664-6.571,5.547-6.571,9.856v117.333
 			H10.667C4.779,160.298,0,165.076,0,170.964v170.667c0,5.888,4.779,10.667,10.667,10.667h266.667v116.885
 			c0,4.309,2.603,8.192,6.592,9.856c1.323,0.555,2.709,0.811,4.075,0.811c2.773,0,5.504-1.088,7.552-3.115l213.504-213.419
 			c2.005-2.005,3.115-4.715,3.115-7.552C512.171,252.927,511.04,250.218,509.035,248.212z"
-              />
-            </g>
-          </g>
+          /> -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          class="
+            stroke-current stroke-2/3
+            text-default-black
+            dark:text-default-white dark:text-opacity-87
+            dm-toggle-transition
+          "
+        >
+          <polyline
+            points="12 16 16 12 12 8"
+            fill="none"
+            stroke-miterlimit="10"
+          />
+          <line
+            x1="7"
+            y1="12"
+            x2="16"
+            y2="12"
+            fill="none"
+            stroke-miterlimit="10"
+          />
+          <circle cx="12" cy="12" r="10" fill="none" />
         </svg>
       </button>
     </div>
@@ -142,6 +177,7 @@
 <script>
 // import store from "../store.js";
 import Footer from "@/components/footer.vue";
+import anime from "animejs/lib/anime.es.js";
 
 export default {
   name: "Home",
@@ -153,6 +189,52 @@ export default {
       const el = document.getElementById("x1");
       el.scrollIntoView();
     },
+
+    hoverOn() {
+      anime({
+        targets: ["line", "polyline"],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 1000,
+        delay: anime.stagger(1000),
+        endDelay: 500,
+        direction: "alternate",
+        loop: true,
+      });
+    },
+
+    hoverOff() {
+      anime({
+        targets: ["line", "polyline"],
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: "easeInOutSine",
+        duration: 0,
+        delay: anime.stagger(1000),
+        direction: "alternate",
+        loop: false,
+      });
+    },
+  },
+  mounted() {
+    // anime({
+    //   targets: ["line", "polyline"],
+    //   strokeDashoffset: [anime.setDashoffset, 0],
+    //   easing: "easeInOutSine",
+    //   duration: 1500,
+    //   // delay: function (el, i) {
+    //   //   return i * 3000;
+    //   // },
+    //   delay: anime.stagger(1000),
+    //   direction: "alternate",
+    //   loop: true,
+    // });
   },
 };
 </script>
+
+<style scoped>
+.cls-1 {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+</style>
