@@ -112,6 +112,7 @@
     <div>
       <button
         id="scrollBtn"
+        title="cwick me pwease UwU"
         @click="scrollToChain"
         @mouseover="hoverOn"
         @mouseout="hoverOff"
@@ -153,10 +154,14 @@
         >
           <polyline
             points="12 16 16 12 12 8"
+            id="pl"
+            class="hidden"
             fill="none"
             stroke-miterlimit="10"
           />
           <line
+            id="l"
+            class="hidden"
             x1="7"
             y1="12"
             x2="16"
@@ -189,6 +194,8 @@ export default {
     },
 
     hoverOn() {
+      document.getElementById("l").classList.remove("hidden");
+      document.getElementById("pl").classList.remove("hidden");
       anime({
         targets: ["line", "polyline"],
         strokeDashoffset: [anime.setDashoffset, 0],
@@ -202,6 +209,8 @@ export default {
     },
 
     hoverOff() {
+      document.getElementById("l").classList.add("hidden");
+      document.getElementById("pl").classList.add("hidden");
       anime.remove(["line", "polyline"]);
     },
   },
