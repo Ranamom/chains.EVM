@@ -16,7 +16,7 @@
   >
     <!-- <img src="../assets/logo.png" class="h-12" /> -->
     <svg
-      id="Layer_1"
+      id="logo"
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 200 200"
@@ -60,6 +60,7 @@
 <script>
 import walletButton from "@/components/walletButton.vue";
 import darkModeToggle from "@/components/darkModeToggle.vue";
+import anime from "animejs/lib/anime.es.js";
 // import store from "../store.js";
 
 export default {
@@ -73,6 +74,19 @@ export default {
       const el = document.getElementById("x0");
       el.scrollIntoView();
     },
+  },
+  mounted() {
+    anime({
+      targets: "#logo path",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeInOutSine",
+      duration: 20000,
+      // delay: function (el, i) {
+      //   return i * 3000;
+      // },
+      // direction: "alternate",
+      loop: false,
+    });
   },
 };
 </script>
