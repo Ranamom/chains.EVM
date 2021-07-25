@@ -112,7 +112,6 @@
     <div>
       <button
         id="scrollBtn"
-        title="cwick me pwease UwU"
         @click="scrollToChain"
         @mouseover="hoverOn"
         @mouseout="hoverOff"
