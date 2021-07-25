@@ -92,7 +92,7 @@ export default {
           symbol: this.chain.nativeCurrency.symbol,
           decimals: this.chain.nativeCurrency.decimals,
         },
-        rpcUrls: [this.chain.rpc[0]],
+        rpcUrls: [...this.chain.rpc],
         blockExplorerUrls: [
           // eslint-disable-next-line prettier/prettier
           this.chain.explorers &&
