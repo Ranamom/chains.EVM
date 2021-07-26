@@ -15,7 +15,12 @@
     <div class="py-6 text-xs mx-auto text-center">
       Designed and built with <span class="text-red">♥</span> by
       <a
-        class="hover:underline font-normal"
+        class="
+          hover:underline
+          font-normal
+          hover:text-primary-700
+          dark:hover:text-primary-300
+        "
         href="https://vinaydawani.dev/"
         target="_blank"
         >Vinay Dawani</a
