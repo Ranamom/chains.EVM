@@ -10,12 +10,16 @@
         shadow-md
         dark:bg-background-gray
         dm-toggle-transition
-        w-2/5
+        w-11/12
+        md:w-3/5
+        lg:w-2/5
         h-10
         rounded-full
       "
     >
-      <div class="font-title font-semibold pl-4">Search chain</div>
+      <div class="font-title font-semibold pl-4 flex-shrink-0">
+        Search chain
+      </div>
       <input
         type="text"
         placeholder="Ethereum, BNB, 137..."
