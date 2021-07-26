@@ -6,6 +6,7 @@ Chains.EVM provides a neat interface for users and allows them to add various [E
 ![Website](https://img.shields.io/website?down_color=red&down_message=down&label=status&style=for-the-badge&up_color=green&up_message=up&url=https%3A%2F%2Fchainsevm.netlify.app%2F)
 ![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/vinaydawani/chains.EVM?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/vinaydawani/chains.EVM?color=blue&style=for-the-badge)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/vinaydawani/chains.EVM?style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/vinaydawani/chains.EVM?color=blue&style=for-the-badge)
 ![approved](https://img.shields.io/static/v1?style=for-the-badge&label=approved%20by&message=Crypto%20HODLers&color=121212&logo=ethereum)
 
