@@ -7,7 +7,9 @@
       border-gray-700 border-solid border
       rounded-full
       shadow
-      dark:bg-primary-400 dark:border-0 dark:disabled:bg-background-dp08
+      dark:bg-primary-400
+      dark:border-0
+      dark:disabled:bg-background-dp08
       disabled:opacity-38
       dm-toggle-transition
     "
@@ -26,24 +28,26 @@ export default {
   name: "walletButton",
   methods: {
     async connect() {
-      const bbText = document.getElementById("bbText");
-      if (document.firstElementChild.classList.contains("dark")) {
-        bbText.classList.remove("text-default-black");
-        bbText.classList.add("text-opacity-38");
-        bbText.classList.add("text-default-white");
-      } else {
-        bbText.classList.add("text-opacity-38");
+      if (!store.state.account) {
+        const bbText = document.getElementById("bbText");
+        if (document.firstElementChild.classList.contains("dark")) {
+          bbText.classList.remove("text-default-black");
+          bbText.classList.add("text-opacity-38");
+          bbText.classList.add("text-default-white");
+        } else {
+          bbText.classList.add("text-opacity-38");
+        }
+        document.getElementById("baseButton").disabled = true;
+        await store.tryWalletConnect();
+        if (document.firstElementChild.classList.contains("dark")) {
+          bbText.classList.add("text-default-black");
+          bbText.classList.remove("text-opacity-38");
+          bbText.classList.remove("text-default-white");
+        } else {
+          bbText.classList.remove("text-opacity-38");
+        }
+        document.getElementById("baseButton").disabled = false;
       }
-      document.getElementById("baseButton").disabled = true;
-      await store.tryWalletConnect();
-      if (document.firstElementChild.classList.contains("dark")) {
-        bbText.classList.add("text-default-black");
-        bbText.classList.remove("text-opacity-38");
-        bbText.classList.remove("text-default-white");
-      } else {
-        bbText.classList.remove("text-opacity-38");
-      }
-      document.getElementById("baseButton").disabled = false;
     },
   },
   computed: {
