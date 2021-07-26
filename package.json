@@ -1,6 +1,6 @@
 {
   "name": "Chains.EVM",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A small website which enables user to add EVM based networks to user's web3 enables wallet",
   "private": true,
   "license": "MIT",
