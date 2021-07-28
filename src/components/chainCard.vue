@@ -47,7 +47,8 @@
           text-center
           px-4
           py-1
-          hover:text-default-white hover:bg-primary-700
+          hover:text-default-white
+          hover:bg-primary-700
           dark:hover:border-primary-300
           dark:hover:bg-primary-300
           dark:hover:text-default-black
@@ -98,7 +99,7 @@ export default {
           this.chain.explorers &&
           this.chain.explorers.length > 0 &&
           this.chain.explorers[0].url
-            ? this.chain.explorers[0]
+            ? this.chain.explorers[0].url
             : this.chain.infoURL,
         ],
       };
@@ -109,7 +110,6 @@ export default {
           params: [{ chainId: params.chainId }],
         });
       } catch (switchError) {
-        console.log(switchError);
         // This error code indicates that the chain has not been added to MetaMask.
         if (switchError.code === 4902) {
           try {
@@ -118,7 +118,7 @@ export default {
               params: [params],
             });
           } catch (addError) {
-            console.log(addError);
+            console.log(addError.message);
           }
         }
       }
