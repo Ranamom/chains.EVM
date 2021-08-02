@@ -117,30 +117,6 @@
         @mouseout="hoverOff"
         class="w-16 h-16 rounded-full"
       >
-        <!-- <svg
-          version="1.1"
-          id="Capa_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          viewBox="0 0 512.171 512.171"
-          style="enable-background: new 0 0 512.171 512.171"
-          xml:space="preserve"
-        >
-          <path
-            class="
-              cls-1
-              stroke-current stroke-4
-              text-default-black
-              dark:text-default-white dark:text-opacity-87
-              dm-toggle-transition
-            "
-            d="M509.035,248.212l-213.504-212.8c-3.051-3.029-7.595-3.904-11.627-2.304c-3.989,1.664-6.571,5.547-6.571,9.856v117.333
-			H10.667C4.779,160.298,0,165.076,0,170.964v170.667c0,5.888,4.779,10.667,10.667,10.667h266.667v116.885
-			c0,4.309,2.603,8.192,6.592,9.856c1.323,0.555,2.709,0.811,4.075,0.811c2.773,0,5.504-1.088,7.552-3.115l213.504-213.419
-			c2.005-2.005,3.115-4.715,3.115-7.552C512.171,252.927,511.04,250.218,509.035,248.212z"
-          /> -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -177,7 +153,6 @@
 </template>
 
 <script>
-// import store from "../store.js";
 import Footer from "@/components/footer.vue";
 import anime from "animejs/lib/anime.es.js";
 
@@ -187,11 +162,13 @@ export default {
     Footer,
   },
   methods: {
+    // method for scrolling to chains page on button click
     scrollToChain() {
       const el = document.getElementById("x1");
       el.scrollIntoView();
     },
 
+    // method to show arrow on hover
     hoverOn() {
       document.getElementById("l").classList.remove("hidden");
       document.getElementById("pl").classList.remove("hidden");
@@ -207,6 +184,7 @@ export default {
       });
     },
 
+    // method to hide arrow on hover off
     hoverOff() {
       document.getElementById("l").classList.add("hidden");
       document.getElementById("pl").classList.add("hidden");

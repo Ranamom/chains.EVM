@@ -71,10 +71,7 @@ export default {
     chainCard,
   },
   data() {
-    return {
-      // filteredChains: [],
-      // query: "",
-    };
+    return {};
   },
   props: {
     chainData: {
@@ -83,8 +80,10 @@ export default {
     },
   },
   setup(props) {
-    const query = ref("");
+    // logic for search feature
+    const query = ref(""); // reactive variable
 
+    // this variables stores objects that matches the search criteria and passes them to child component
     const filteredData = computed(() => {
       return props.chainData.filter((chain) => {
         return (

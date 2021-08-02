@@ -38,7 +38,6 @@
       </div>
     </div>
     <div class="flex justify-center">
-      <!-- <div class="border rounded-full w-32 h-8 text-center"> -->
       <button
         class="
           text-primary-700
@@ -47,8 +46,7 @@
           text-center
           px-4
           py-1
-          hover:text-default-white
-          hover:bg-primary-700
+          hover:text-default-white hover:bg-primary-700
           dark:hover:border-primary-300
           dark:hover:bg-primary-300
           dark:hover:text-default-black
@@ -59,7 +57,6 @@
       >
         Add to wallet
       </button>
-      <!-- </div> -->
     </div>
   </div>
 </template>
@@ -85,6 +82,7 @@ export default {
         return "0x" + num.toString(16);
       };
 
+      // params for the call
       let params = {
         chainId: toHex(this.chain.chainId),
         chainName: this.chain.name,
@@ -104,21 +102,25 @@ export default {
         ],
       };
 
+      // This block tries to switch chain and if it doesn't find the chain in metamask, it then proceeds to add the chain.
+      // uses try catch bc eh why not but probably switch to ES6 then here
       try {
+        // request to switch the chain
         await window.ethereum.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: params.chainId }],
         });
       } catch (switchError) {
-        // This error code indicates that the chain has not been added to MetaMask.
+        // This error code indicates that the chain is not in MetaMask.
         if (switchError.code === 4902) {
           try {
+            // request to add chain
             await window.ethereum.request({
               method: "wallet_addEthereumChain",
               params: [params],
             });
           } catch (addError) {
-            console.log(addError.message);
+            console.log(addError.message); // TODO: make error toasts probably? (vue-toastification)
           }
         }
       }

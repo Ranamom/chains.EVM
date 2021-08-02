@@ -25,10 +25,6 @@ export default {
 </script>
 
 <style>
-/* .scroll-snap-container.horizontal {
-  overflow-y: scroll;
-  overflow-y: visible;
-} */
 #x1 {
   overflow-y: scroll;
 }

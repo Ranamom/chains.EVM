@@ -18,6 +18,7 @@ export default {
     };
   },
   methods: {
+    // fetching data from source
     async getData() {
       await fetch("https://chainid.network/chains.json")
         .then((response) => response.json())

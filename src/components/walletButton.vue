@@ -25,6 +25,7 @@ import store from "../store.js";
 export default {
   name: "walletButton",
   methods: {
+    // calls the connect methods and handles disabling for the button
     async connect() {
       if (!store.state.account) {
         const bbText = document.getElementById("bbText");
@@ -36,7 +37,7 @@ export default {
           bbText.classList.add("text-opacity-38");
         }
         document.getElementById("baseButton").disabled = true;
-        await store.tryWalletConnect();
+        await store.tryWalletConnect(); // calls method from store that handles connecting wallet
         if (document.firstElementChild.classList.contains("dark")) {
           bbText.classList.add("text-default-black");
           bbText.classList.remove("text-opacity-38");
@@ -49,12 +50,7 @@ export default {
     },
   },
   computed: {
-    getUser() {
-      return store.state.account;
-    },
-    getChain() {
-      return store.state.chainId;
-    },
+    // handles setting the current user to the button
     currentUser() {
       let userString;
       if (store.state.account) {

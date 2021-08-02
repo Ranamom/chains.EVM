@@ -14,18 +14,10 @@ import store from "../store.js";
 export default {
   name: "darkModeToggle",
   methods: {
+    // toggles the dark class on html tag on button click
     darkClassToggle() {
       const toggle = document.querySelector(".toggle");
       const html = document.firstElementChild;
-      // if (toggle.checked) {
-      //   html.classList.remove("dark");
-      //   localStorage.theme = "light";
-      //   toggle.checked = true;
-      // } else {
-      //   html.classList.add("dark");
-      //   localStorage.theme = "dark";
-      // }
-      // console.log(store.state.theme);
 
       store.state.theme = null;
       // HACK: to inverse icon where moon shows on dark background, exchange '!' on toggle.checked in if-else-if and invert localstorage.theme (dark -> white and vice verse)
@@ -37,6 +29,8 @@ export default {
         localStorage.theme = "dark";
       }
     },
+
+    // checks to see if the theme is in local storage and sets it to global store
     initTheme() {
       const cacheTheme = localStorage.theme ? localStorage.theme : false;
       const prefersDark = window.matchMedia(
@@ -53,6 +47,7 @@ export default {
     },
   },
   mounted() {
+    // toggles the button for initial state
     const toggle = document.querySelector(".toggle");
     if (store.state.theme === "dark") {
       toggle.checked = false;
@@ -68,6 +63,8 @@ export default {
 </script>
 
 <style>
+/* Some magic */
+/* also this is not mine lol */
 .toggle {
   --size: 2rem;
   -webkit-appearance: none;
