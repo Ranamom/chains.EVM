@@ -41,4 +41,4 @@ Data was obtained in JSON format from [chainid.network](https://chainid.network/
 
 ## Progress
 
-Check progress of this project on [Notion](https://concise-stone-d33.notion.site/Chains-EVM-b1a86122d15f4168b47988eff87d21a9)
+Check progress of this project on [Notion](https://vinaydawani.notion.site/Chains-EVM-b1a86122d15f4168b47988eff87d21a9)
